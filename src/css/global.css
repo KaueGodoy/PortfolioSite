@@ -94,10 +94,6 @@ button.sound:hover {
   transition: background-color 0.5s, border 0.5s;
 }
 
-.sound-on {
-  display: none;
-}
-
 button.sound i {
   font-size: 1.6rem;
   color: white;
