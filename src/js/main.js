@@ -28,3 +28,8 @@ $(function() {
     });
   }
 });
+
+/* Button Play */
+$('.play').on('click', function() {
+  $(this).toggleClass('goDown');
+});
