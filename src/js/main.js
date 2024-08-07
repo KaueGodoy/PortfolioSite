@@ -16,14 +16,14 @@ $(function() {
     $(".sound-on").hide();
 
     $(".sound-muted").on('click', function() {
-      $(".sound-on").fadeIn();
-      $(".sound-muted").fadeOut();
+      $(".sound-on").show();
+      $(".sound-muted").hide();
       $audio.play(); 
     });
 
     $(".sound-on").on('click', function() {
-      $(".sound-muted").fadeIn();
-      $(".sound-on").fadeOut();
+      $(".sound-muted").show();
+      $(".sound-on").hide();
       $audio.pause(); 
     });
   }

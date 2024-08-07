@@ -10,9 +10,104 @@ html {
 }
 
 body {
-  background-color: burlywood;
+  background-color: rgb(13, 17, 23);
   width: 100%;
   height: 100%;
+  font-size: 1.6rem;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/***** HEADER *****/
+header {
+  height: 8rem;
+  position: relative;
+  background: none;
+  z-index: 9;
+}
+
+#nav {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+  margin: 1rem auto 0;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(13, 17, 23, 0.6);
+  padding: 0.8rem 1.6rem;
+  border-radius: 4.8rem;
+}
+
+.wrapper-button {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+#nav ul.nav-links {
+  display: flex;
+  gap: 4rem;
+  color: white;
+}
+
+#nav ul.nav-links ul {
+  display: flex;
+  gap: 1rem;
+}
+
+#nav ul.nav-links ul li i {
+  font-size: 1.6rem;
+}
+
+.logo {
+  color: white;
+  font-family: 'Kanit', 'sans-serif';
+  text-align: center;
+  line-height: 1.4rem;
+}
+
+/***** BUTTON SOUND *****/
+button.sound {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  padding: 0.6rem 0.8rem;
+  background-color: transparent;
+  transition: background-color 0.5s, border 0.5s;
+  cursor: pointer;
+  z-index: 9;
+  flex-shrink: 0;
+}
+
+button.sound:hover {
+  border: 1px solid transparent;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.5s, border 0.5s;
+}
+
+button.sound i {
+  font-size: 1.6rem;
+  color: white;
+}
+
+/***** MAIN *****/
+main {
+  position: absolute;
+  top: 0;
+  z-index: 2;
 }
 
 .std.hero {
@@ -32,10 +127,9 @@ video {
   object-position: center;
 }
 
-.owl-nav .owl-prev,
-.owl-nav .owl-next {
-  width: 4.8rem; 
-  height: 4.8rem; 
+.owl-nav .owl-prev, .owl-nav .owl-next {
+  width: 4.8rem;
+  height: 4.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,8 +141,7 @@ video {
   transition: all .5s ease-in-out;
 }
 
-.owl-carousel .owl-nav button.owl-next, 
-.owl-carousel .owl-nav button.owl-prev {
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev {
   border-radius: 50%;
 }
 
@@ -60,41 +153,16 @@ video {
   right: 10px;
 }
 
-.owl-nav .owl-prev i,
-.owl-nav .owl-next i {
+.owl-nav .owl-prev i, .owl-nav .owl-next i {
   font-size: 2.4rem;
-  color: white; 
+  color: white;
 }
 
 .owl-theme .owl-nav [class*=owl-]:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(13, 17, 23, 0.1);
   transition: all .5s ease-in-out;
 }
 
 .owl-theme .owl-nav [class*=owl-].disabled {
   background: transparent;
-}
-
-button.sound {
-  position: absolute;
-  top: 3rem;
-  left: 3rem;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  padding: 0.6rem; 
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: background-color 0.5s, border 0.5s;
-  cursor: pointer;
-  z-index: 9;
-}
-
-button.sound:hover {
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background-color: transparent;
-  transition: background-color 0.5s, border 0.5s;
-}
-
-button.sound i {
-  font-size: 1.6rem;
-  color: white;
 }
