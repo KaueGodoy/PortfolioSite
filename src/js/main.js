@@ -33,3 +33,26 @@ $(function() {
 $('.play').on('click', function() {
   $(this).toggleClass('goDown');
 });
+
+/* Sections */
+$('footer').hide();
+
+/* About me */
+$('#about-me').hide();
+
+$('#sd-about-me').on('click', function(event) {
+  event.preventDefault(); // Impede o comportamento padrão do link
+
+  $(this).fadeOut();
+  $('#hero').fadeOut();
+  $('#about-me').fadeIn();
+  $('footer').fadeIn();
+});
+
+/* Botão de voltar */
+$('.back').on('click', function() {
+  $('#about-me').fadeOut();
+  $('footer').fadeOut();
+  $('#sd-about-me').fadeIn();
+  $('#hero').fadeIn();
+});
