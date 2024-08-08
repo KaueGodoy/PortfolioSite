@@ -35,24 +35,41 @@ $('.play').on('click', function() {
 });
 
 /* Sections */
-$('footer').hide();
-
-/* About me */
-$('#about-me').hide();
-
-$('#sd-about-me').on('click', function(event) {
-  event.preventDefault(); // Impede o comportamento padrão do link
-
-  $(this).fadeOut();
+function showSection(sectionType, sectionId) {
+  $(`.${sectionType}`).removeClass('active-section').fadeOut(1000);
+  $(`#${sectionId}`).addClass('active-section').fadeIn(1000);
   $('#hero').fadeOut();
-  $('#about-me').fadeIn();
-  $('footer').fadeIn();
+  $('.wrapper-sections').fadeIn();
+  $('.button-navigation.back').fadeIn(2000);
+  $('footer').fadeIn(1000);
+}
+
+// About me
+$('.button-info').on('click', function(event) {
+  event.preventDefault();
+  let sectionId = $(this).data('section');
+  $('.button-info').fadeOut();
+  showSection('info-section', sectionId);
+});
+
+// Games
+$('.button-navigation').on('click', function() {
+  let gameId = $(this).data('section');
+  showSection('game-section', gameId);
+});
+
+// Evitar múltiplos eventos
+$('.button-navigation').on('click', '*', function(e) {
+  e.stopPropagation(); 
+  $(this).closest('.button-navigation').trigger('click');
 });
 
 /* Botão de voltar */
 $('.back').on('click', function() {
   $('#about-me').fadeOut();
   $('footer').fadeOut();
-  $('#sd-about-me').fadeIn();
+  $('.button-info').fadeIn();
   $('#hero').fadeIn();
 });
+
+

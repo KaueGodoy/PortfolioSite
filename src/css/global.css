@@ -1543,12 +1543,18 @@ p.sign {
 }
 
 /***** SECTION ABOUT ME *****/
-#about-me {
+.info-section {
+  display: none;
   position: relative;
   height: 100vh;
 }
 
-.wrapper-me {
+.info-section.active-section {
+  display: block;
+}
+
+.wrapper-sections {
+  display: none;
   margin-top: 10rem;
 }
 
@@ -1606,6 +1612,17 @@ button.button-navigation.back {
   gap: 8rem;
   justify-content: space-between;
   text-align: center;
+}
+
+/***** GAME SECTIONS *****/
+.game-section {
+  display: none;
+  position: relative;
+  height: 100vh;
+}
+
+.game-section.active-section {
+  display: block;
 }
 
 /***** FOOTER *****/
