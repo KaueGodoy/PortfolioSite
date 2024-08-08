@@ -43,12 +43,12 @@ $('.button-info').on('click', function(event) {
   let sectionId = $(this).data('section');
   $('.game-section').removeClass('active-section').fadeOut(500);
 
-  $('.game-section').removeClass('active-section').hide();
+  $('.info-section').removeClass('active-section').fadeOut(500);
   $(`#${sectionId}`).addClass('active-section').fadeIn(1000);
 
   $(this).fadeOut(500);
   $('#hero').fadeOut(500);
-  $('.wrapper-sections').fadeToggle(1000);
+  $('.wrapper-sections').fadeIn(1000);
   $('footer').fadeIn(1000);
   $('.button-navigation.back').fadeIn(1000);
 });
