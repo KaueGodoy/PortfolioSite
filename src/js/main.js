@@ -35,43 +35,43 @@ $('.play').on('click', function() {
 });
 
 /* Sections */
-$('footer').hide();
 
-function showSection(sectionType, sectionId) {
-  $(`.${sectionType}`).removeClass('active-section').fadeOut(1000);
-  $(`#${sectionId}`).addClass('active-section').fadeIn(1000);
-  $('#hero').fadeOut();
-  $('.wrapper-sections').fadeIn();
-  $('.button-navigation.back').fadeIn(2000);
-  $('footer').fadeIn(1000);
-}
-
-// About me
+/* Botão About Me */
 $('.button-info').on('click', function(event) {
   event.preventDefault();
+
   let sectionId = $(this).data('section');
-  $('.button-info').fadeOut();
-  showSection('info-section', sectionId);
+  $('.game-section').removeClass('active-section').fadeOut(500);
+
+  $('.game-section').removeClass('active-section').hide();
+  $(`#${sectionId}`).addClass('active-section').fadeIn(1000);
+
+  $(this).fadeOut(500);
+  $('#hero').fadeOut(500);
+  $('.wrapper-sections').fadeToggle(1000);
+  $('footer').fadeIn(1000);
+  $('.button-navigation.back').fadeIn(1000);
 });
 
-// Games
+/* Botões de Navegação dos Jogos */
 $('.button-navigation').on('click', function() {
   let gameId = $(this).data('section');
-  showSection('game-section', gameId);
+  $('.info-section').removeClass('active-section').fadeOut(500);
+
+  $('.game-section').removeClass('active-section').hide();
+  $(`#${gameId}`).addClass('active-section').fadeIn(1000);
+
+  $('#hero').fadeOut(500);
+  $('.wrapper-sections').fadeToggle(1000);
+  $('footer').fadeIn(1000);
+  $('.button-navigation.back').fadeIn(1000);
 });
 
-// Evitar múltiplos eventos
-$('.button-navigation').on('click', '*', function(e) {
-  e.stopPropagation(); 
-  $(this).closest('.button-navigation').trigger('click');
+/* Botão de Voltar */
+$('.button-navigation.back').on('click', function() {
+  $(this).fadeOut(500);
+  $('footer').fadeOut(500);
+  $('.wrapper-sections').fadeOut(500);
+  $('#hero').fadeIn(1000);
+  $('.button-info').fadeIn(1000);
 });
-
-/* Botão de voltar */
-$('.back').on('click', function() {
-  $('#about-me').fadeOut();
-  $('footer').fadeOut();
-  $('.button-info').fadeIn();
-  $('#hero').fadeIn();
-});
-
-
