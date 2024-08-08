@@ -35,6 +35,8 @@ $('.play').on('click', function() {
 });
 
 /* Sections */
+$('footer').hide();
+
 function showSection(sectionType, sectionId) {
   $(`.${sectionType}`).removeClass('active-section').fadeOut(1000);
   $(`#${sectionId}`).addClass('active-section').fadeIn(1000);
