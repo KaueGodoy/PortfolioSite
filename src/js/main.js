@@ -66,11 +66,17 @@ $('.button-info').on('click', function(event) {
   $(`#${sectionId}`).addClass('active-section').fadeIn(1000);
 
   $(this).fadeOut(500);
+
+  setTimeout(() => {
+    $('#nav ul.nav-links').css('gap', '0');
+  }, 500);
+
   $('#hero').fadeOut(500);
   $('.wrapper-sections').fadeIn(1000);
   $('footer').fadeIn(1000);
   $('.button-navigation.back').fadeIn(1000);
 });
+
 
 /* Botões de Navegação dos Jogos */
 $('.button-navigation').on('click', function() {
