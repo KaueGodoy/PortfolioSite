@@ -545,6 +545,10 @@ footer {
 /* MEDIUM SCREENS */
 @media screen and (max-width: 767px) {
   /***** HEADER *****/
+  header {
+    min-height: 12rem;
+ }
+
   #nav {
     background: none;
     flex-direction: column;
@@ -656,7 +660,7 @@ footer {
    /***** SECTION GAME *****/
    .wrapper-sections {
     padding: 2rem;
-    margin-top: 14vh;
+    margin-top: 12rem;
     max-height: 61vh;
   }
 
