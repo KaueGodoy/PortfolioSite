@@ -146,7 +146,6 @@ button.sound i {
 main {
   position: relative;
   top: -8vh;
-  z-index: 2;
   height: 100vh;
 }
 
@@ -429,6 +428,7 @@ button.button-navigation.back {
 
 .game-section.active-section {
   display: block;
+  position: relative;
 }
 
 .header-game {
@@ -443,27 +443,45 @@ button.button-navigation.back {
 }
 
 .wrapper-sections h2.title {
-    margin: 4rem 0 2rem;
+  margin: 4rem 0 2rem;
+}
+
+.option-plataform {
+  display: flex;
+  gap: 2rem;
 }
 
 button.button-navigation.game-download {
-    filter: invert(1);
+  filter: invert(1);
 }
 
 .owl-carousel.gallery .owl-nav .owl-prev i, 
 .owl-carousel.gallery .owl-nav .owl-next i {
-    border: 1px solid transparent;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.55rem;
-    border-radius: 50%;
-    transition: all 0.4s ease;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.55rem;
+  border-radius: 50%;
+  transition: all 0.4s ease;
 }
 
 .owl-carousel.gallery .owl-nav .owl-prev i:hover, 
 .owl-carousel.gallery .owl-nav .owl-next i:hover {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    transition: all 0.4s ease;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.4s ease;
+}
+
+.owl-carousel.gallery img {
+  cursor: pointer;
+}
+
+.modal-body img {
+  max-width: 100%;
+  height: auto;
+}
+
+.modal {
+    --bs-modal-width: 968px;
 }
 
 /***** FOOTER *****/

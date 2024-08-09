@@ -78,6 +78,8 @@ $('.button-navigation').on('click', function() {
   $('.info-section').removeClass('active-section').fadeOut(500);
 
   if ($(this).hasClass('game-download')) {
+    let file = $(this).data('file');
+    window.location.href = file; 
     return;
   } else if ($(this).hasClass('playBtn')) {
     $(this).animate({
@@ -96,6 +98,22 @@ $('.button-navigation').on('click', function() {
     $('footer').fadeIn(1000);
     $('.button-navigation.back').fadeIn(1000);
   }
+});
+
+/* Visualização Galeria */
+$('.owl-carousel.gallery img').on('click', function() {
+  var src = $(this).attr('src');
+  $('#modalImage').attr('src', src); 
+  $('#modalGallery').modal('show');
+});
+
+$('button.close').on('click', function () {
+  $('#modalImage').attr('src', '');
+  $('#modalGallery').modal('hide'); 
+});
+
+$('#modalGallery').on('shown.bs.modal', function () {
+
 });
 
 /* Botão de Voltar */
