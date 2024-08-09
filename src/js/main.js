@@ -129,4 +129,8 @@ $('.button-navigation.back').on('click', function() {
   $('.wrapper-sections').fadeOut(500);
   $('#hero').fadeIn(1000);
   $('.button-info').fadeIn(1000);
+
+  setTimeout(() => {
+    $('#nav ul.nav-links').css('gap', '2rem');
+  }, 0);
 });

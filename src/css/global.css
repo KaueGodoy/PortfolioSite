@@ -85,7 +85,7 @@ header {
 
 #nav ul.nav-links {
   display: flex;
-  gap: 4rem;
+  gap: 4rem !important;
   color: white;
 }
 
@@ -572,7 +572,6 @@ footer {
   }
 
   #nav ul.nav-links {
-    gap: 2rem;
     padding: 1rem 2rem;
     align-items: center;
     background: rgba(13, 17, 23, 0.6);
