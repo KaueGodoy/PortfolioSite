@@ -49,6 +49,11 @@ li {
   border-radius: 4px;
 }
 
+.mark, mark {
+    background: rgba(255,255,255,1);
+    font-weight: 600;
+}
+
 /***** HEADER *****/
 header {
   min-height: 8vh;
