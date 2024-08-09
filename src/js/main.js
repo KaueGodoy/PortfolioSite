@@ -49,8 +49,8 @@ $('.owl-carousel.gallery').owlCarousel({
 
 
 /* Button Play */
-$('.play').on('click', function() {
-  $(this).toggleClass('goDown');
+$('#playBtn').on('click', function() {
+  return;
 });
 
 /* Sections */
@@ -76,18 +76,26 @@ $('.button-info').on('click', function(event) {
 $('.button-navigation').on('click', function() {
   let gameId = $(this).data('section');
   $('.info-section').removeClass('active-section').fadeOut(500);
+
   if ($(this).hasClass('game-download')) {
-    // Não faz nada se o botão tiver a classe 'game-download'
     return;
+  } else if ($(this).hasClass('playBtn')) {
+    $(this).animate({
+      marginTop: '100px', 
+      opacity: 0
+    }, 1000, function() {
+      $(this).remove();
+    });
+    return;
+  } else {
+    $('.game-section').removeClass('active-section').hide();
+    $(`#${gameId}`).addClass('active-section').fadeIn(1000);
+
+    $('#hero').fadeOut(500);
+    $('.wrapper-sections').fadeToggle(1000);
+    $('footer').fadeIn(1000);
+    $('.button-navigation.back').fadeIn(1000);
   }
-
-  $('.game-section').removeClass('active-section').hide();
-  $(`#${gameId}`).addClass('active-section').fadeIn(1000);
-
-  $('#hero').fadeOut(500);
-  $('.wrapper-sections').fadeToggle(1000);
-  $('footer').fadeIn(1000);
-  $('.button-navigation.back').fadeIn(1000);
 });
 
 /* Botão de Voltar */
