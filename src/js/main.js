@@ -1,5 +1,5 @@
 $(function() {
-  // Carousel
+  // Carousel - Hero Banner
   $('.owl-carousel').owlCarousel({
     loop: false,
     items: 1,
@@ -29,6 +29,25 @@ $(function() {
   }
 });
 
+// Carousel - Gallery
+$('.owl-carousel.gallery').owlCarousel({
+  loop: false,
+  items: 1,
+  margin: 20,
+  dots: false,
+  nav: true,
+  navText: ["<i class='bi bi-arrow-left'></i>", "<i class='bi bi-arrow-right'></i>"],
+  responsive: {
+    0: { 
+      items: 1
+    },
+    728: {
+      items: 3
+    }
+  }
+});
+
+
 /* Button Play */
 $('.play').on('click', function() {
   $(this).toggleClass('goDown');
@@ -57,6 +76,10 @@ $('.button-info').on('click', function(event) {
 $('.button-navigation').on('click', function() {
   let gameId = $(this).data('section');
   $('.info-section').removeClass('active-section').fadeOut(500);
+  if ($(this).hasClass('game-download')) {
+    // Não faz nada se o botão tiver a classe 'game-download'
+    return;
+  }
 
   $('.game-section').removeClass('active-section').hide();
   $(`#${gameId}`).addClass('active-section').fadeIn(1000);
