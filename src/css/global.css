@@ -358,13 +358,13 @@ video {
 
 .presentation.me {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 4rem;
 }
 
 .presentation.me img {
   border-radius: 50%;
-  width: 250px;
+  min-width: 250px;
 }
 
 .text-presentation h1 {
