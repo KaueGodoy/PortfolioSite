@@ -546,7 +546,7 @@ footer {
 @media screen and (max-width: 767px) {
   /***** HEADER *****/
   header {
-    min-height: 12rem;
+    min-height: 14rem;
  }
 
   #nav {
