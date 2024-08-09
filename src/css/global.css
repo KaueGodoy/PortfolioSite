@@ -476,12 +476,14 @@ button.button-navigation.game-download {
 }
 
 .modal-body img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  max-height: 600px;
+  object-fit: cover;
 }
 
 .modal {
-    --bs-modal-width: 968px;
+  --bs-modal-width: 968px;
 }
 
 /***** FOOTER *****/
