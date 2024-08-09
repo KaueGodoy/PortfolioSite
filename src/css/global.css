@@ -407,6 +407,10 @@ button.button-navigation.back {
 
 .presentation.languages {
     border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
 .skills-group {
@@ -420,7 +424,7 @@ button.button-navigation.back {
 .grop-lang {
   display: flex;
   gap: 8rem;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
 }
 
