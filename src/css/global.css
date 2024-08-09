@@ -668,6 +668,10 @@ footer {
   .wrapper-sections a {
     text-align: center;
   }
+
+  .wrapper-sections .text-presentation p {
+    text-align: justify;
+  }
   
   .button-navigation.game-download {
     display: flex;
