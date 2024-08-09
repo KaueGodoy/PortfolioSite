@@ -356,6 +356,10 @@ video {
   border-bottom: 1px solid rgba(255, 255, 255, .4);
 }
 
+hr {
+  border-color: rgba(255,255,255,0.4);
+}
+
 .presentation.me {
   display: flex;
   align-items: center;
@@ -484,6 +488,23 @@ button.button-navigation.game-download {
 
 .modal {
   --bs-modal-width: 968px;
+}
+
+.contributors {
+  display: flex;
+  flex-direction: column;
+}
+
+.contributors a {
+  border-bottom: 1px solid transparent;
+  transition: border .4s ease;
+  width: fit-content;
+  margin-bottom: 0.6rem;
+}
+
+.contributors a:hover {
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  transition: border .4s ease;
 }
 
 /***** FOOTER *****/
