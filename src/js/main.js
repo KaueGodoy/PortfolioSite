@@ -11,7 +11,7 @@ $(function() {
   var $audio = $('#song')[0];
   
   if ($audio) {
-    $audio.volume = 0.05; 
+    $audio.volume = 0.115; 
     
     $(".sound-on").hide();
 
