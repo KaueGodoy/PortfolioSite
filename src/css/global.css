@@ -543,8 +543,8 @@ footer {
 }
 
 /***** GAMEPLAY UNITY *****/
-.iframe_placeholder {
-  width: 70%;
+.wrapper-gameplay {
+  width: 100%;
 }
 
 iframe#game_drop {
@@ -564,6 +564,7 @@ iframe#game_drop {
 .gameplay-section .wrapper-sections {
   display: flex !important;
   gap: 1rem;
+  padding: 0;
 }
 
 .game-controls {
