@@ -510,6 +510,16 @@ button.button-navigation.game-download {
   transition: border .4s ease;
 }
 
+.button-navigation.publish {
+  filter: invert(1);
+}
+
+.button-navigation.publish .button-navigation-top {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
 /***** FOOTER *****/
 footer {
   width: 100%;
@@ -605,6 +615,7 @@ iframe#game_drop {
   text-align: center;
   margin: 0 auto;
 }
+
 /* MEDIUM SCREENS */
 @media screen and (max-width: 767px) {
   /***** HEADER *****/

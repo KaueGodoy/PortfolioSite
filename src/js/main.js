@@ -80,6 +80,13 @@ $('.button-info').on('click', function(event) {
 
 /* Botões de Navegação dos Jogos */
 $('.button-navigation').on('click', function() {
+  if ($(this).hasClass('publish')) {
+    // Redirecionar para o URL especificado no data-url e abrir em nova aba
+    let url = $(this).data('url');
+    window.open(url, '_blank');
+    return;
+  }
+
   let gameId = $(this).data('section');
   
   // Remove as seções ativas e oculta todas as seções
