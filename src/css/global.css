@@ -474,8 +474,8 @@ button.button-navigation.game-download {
   filter: invert(1);
 }
 
-.owl-carousel.gallery .owl-nav .owl-prev i, 
-.owl-carousel.gallery .owl-nav .owl-next i {
+.gallery-carousel .owl-nav .owl-prev i, 
+.gallery-carousel .owl-nav .owl-next i {
   border: 1px solid transparent;
   background: rgba(255, 255, 255, 0.2);
   padding: 0.55rem;
@@ -483,14 +483,14 @@ button.button-navigation.game-download {
   transition: all 0.4s ease;
 }
 
-.owl-carousel.gallery .owl-nav .owl-prev i:hover, 
-.owl-carousel.gallery .owl-nav .owl-next i:hover {
+.gallery-carousel .owl-nav .owl-prev i:hover, 
+.gallery-carousel .owl-nav .owl-next i:hover {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.4);
   transition: all 0.4s ease;
 }
 
-.owl-carousel.gallery img {
+.gallery-carousel img {
   cursor: pointer;
 }
 

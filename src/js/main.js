@@ -141,7 +141,7 @@ $(function() {
   });
 
   /* Visualização Galeria */
-  $('.owl-carousel.gallery img').on('click', function() {
+  $('.gallery-carousel img').on('click', function() {
     let src = $(this).attr('src');
     $('#modalImage').attr('src', src); 
     $('#modalGallery').modal('show');
