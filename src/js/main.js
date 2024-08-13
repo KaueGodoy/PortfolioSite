@@ -1,6 +1,6 @@
 $(function() {
   // Carousel - Hero Banner
-  $('.owl-carousel').owlCarousel({
+  $('#hero-carousel').owlCarousel({
     loop: false,
     items: 1,
     dots: false,
@@ -9,7 +9,7 @@ $(function() {
   });
 
   // Carousel - Gallery
-  $('.owl-carousel.gallery').owlCarousel({
+  $('.gallery-carousel').owlCarousel({
     loop: false,
     items: 1,
     margin: 20,
