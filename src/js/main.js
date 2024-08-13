@@ -16,6 +16,8 @@ $(function() {
     dots: false,
     nav: true,
     navText: ["<i class='bi bi-arrow-left'></i>", "<i class='bi bi-arrow-right'></i>"],
+    mouseDrag: false,
+    touchDrag: false,
     responsive: {
       0: { 
         items: 1
