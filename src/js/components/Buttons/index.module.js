@@ -24,10 +24,28 @@ export function initInfoButton() {
     $('.button-navigation.back').fadeIn(1000);
   });
 
+  $('.button-navigation.game-download').on('click', function(event) {
+    event.stopPropagation(); // Evita que o clique propague para outros manipuladores de eventos
+    
+    let $button = $(this);
+    let $buttonText = $button.find('.button-navigation-top'); 
+    let originalText = $buttonText.html(); 
+    
+    // loader
+    $buttonText.html('<div class="dots-loader"><span></span><span></span><span></span></div>');
+
+    // Iniciar o download
+    let file = $button.data('file');
+    window.location.href = file;
+
+    setTimeout(() => {
+      $buttonText.html(originalText);
+    }, 3000); 
+  }); 
+
   /* Botões de Navegação dos Jogos */
-  $('.button-navigation').on('click', function() {
+  $('.button-navigation').not('.game-download').on('click', function() {
     if ($(this).hasClass('publish')) {
-      // Redirecionar para o URL especificado no data-url e abrir em nova aba
       let url = $(this).data('url');
       window.open(url, '_blank');
       return;
@@ -35,24 +53,14 @@ export function initInfoButton() {
 
     let gameId = $(this).data('section');
     
-    // Remove as seções ativas e oculta todas as seções
     $('.gameplay-section').removeClass('active-section').fadeOut(500);
     $('.info-section').removeClass('active-section').fadeOut(500);
     $('.game-section').removeClass('active-section').hide();
     
-    if ($(this).hasClass('game-download')) {
-      // Função para download do arquivo
-      let file = $(this).data('file');
-      window.location.href = file; 
-      return;
-    } else if ($(this).hasClass('playBtn')) {
+    if ($(this).hasClass('playBtn')) {
       if ($(this).hasClass('active')) return; 
     
       $(this).addClass('active');
-
-      if (!$('.gameplay-section').hasClass('active-section')) {
-        reduceVolume();
-      }
 
       $(this).animate({
         marginTop: '100px', 
@@ -63,22 +71,29 @@ export function initInfoButton() {
         $('.game-section').removeClass('active-section').fadeOut(500);
         $('.info-section').removeClass('active-section').fadeOut(500);
 
-        // Exibir a seção correspondente
         $(`#${gameId}`).addClass('active-section').fadeIn(1000);
         $('#hero').fadeOut(500);
         $('.wrapper-sections').fadeIn(1000);
         $('footer').fadeIn(1000);
         $('.button-navigation.back').fadeIn(1000);
 
-        // Adicionar o iframe específico da seção
         let iframeSrc = $(`#${gameId} .iframe_placeholder`).data('iframe-src');
-        let iframe = `<iframe allowfullscreen="true" scrolling="no" src="${iframeSrc}" id="game_drop" allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated; web-share" allowtransparency="true" webkitallowfullscreen="true" mozallowfullscreen="true" msallowfullscreen="true" frameborder="0"></iframe>`;
-        $(`#${gameId} .iframe_placeholder`).html(iframe);
+        if (iframeSrc) {
+          let iframe = `<iframe allowfullscreen="true" scrolling="no" src="${iframeSrc}" id="game_drop" allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated; web-share" allowtransparency="true" webkitallowfullscreen="true" mozallowfullscreen="true" msallowfullscreen="true" frameborder="0"></iframe>`;
+          $(`#${gameId} .iframe_placeholder`).html(iframe);
+          $('.alert-message').hide();
+
+          // Reduz o volume apenas se o iframe estiver presente
+          reduceVolume();
+        } else {
+          $('.alert-message').show();
+          $(`#${gameId} .iframe_placeholder`).html('');
+          // O áudio não será alterado se o alerta estiver presente
+        }
 
         $(this).css({ marginTop: '', opacity: '' }).show(4000);
       });
     } else {
-      // Exibir a seção correspondente
       $(`#${gameId}`).addClass('active-section').fadeIn(1000);
       $('#hero').fadeOut(500);
       $('.wrapper-sections').fadeToggle(1000);
@@ -93,6 +108,9 @@ export function initBackButton() {
   $('.button-navigation.back').on('click', function() {
     const isGameplayActive = $('.gameplay-section').hasClass('active-section');
     const isGameplayVisible = $('.gameplay-section').is(':visible');
+    const hasIframe = $('.iframe_placeholder iframe').length > 0;
+    const hasAlertMessage = $('.alert-message:visible').length > 0;
+
 
     $(this).fadeOut(500);
     $('footer').fadeOut(500);
@@ -104,10 +122,11 @@ export function initBackButton() {
     $('.iframe_placeholder').html('');
     
     // Remove as classes de seção ativa
+    $('.gameplay-section').removeClass('active-section').fadeOut(500);
     $('.game-section').removeClass('active-section').fadeOut(500);
     $('.info-section').removeClass('active-section').fadeOut(500);
 
-    if (!isGameplayActive && isGameplayVisible) {
+    if (!isGameplayActive && isGameplayVisible && hasIframe && !hasAlertMessage) {
       resetAudio();
     }
 
@@ -116,5 +135,3 @@ export function initBackButton() {
     }, 0);
   });
 }
-
-

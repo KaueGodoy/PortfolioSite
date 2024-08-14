@@ -129,3 +129,11 @@
 .button-navigation.playBtn i.bi.bi-play-fill {
   font-size: 4rem;
 }  
+
+.button-navigation.game-download.alert-button {
+  position: absolute;
+  left: 50%;
+  bottom: 4rem;
+  transform: translate(-50%);
+  filter: invert(0);
+}
