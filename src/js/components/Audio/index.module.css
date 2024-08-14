@@ -1,0 +1,34 @@
+/***** BUTTON SOUND *****/
+button.sound {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  padding: 0.6rem 0.8rem;
+  background-color: transparent;
+  transition: background-color 0.5s, border 0.5s;
+  cursor: pointer;
+  z-index: 9;
+  flex-shrink: 0;
+}
+
+button.sound:hover {
+  border: 1px solid transparent;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.5s, border 0.5s;
+}
+
+button.sound i {
+  font-size: 1.6rem;
+  color: white;
+}
+
+.sound-muted:disabled {
+  background-color: rgba(255, 255, 255, 0.3);
+  filter: opacity(0.5);
+  cursor: default;
+  pointer-events: none;
+}
+
+.sound-muted:disabled:hover {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}

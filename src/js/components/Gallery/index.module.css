@@ -1,0 +1,30 @@
+.gallery-carousel .owl-nav .owl-prev i, 
+.gallery-carousel .owl-nav .owl-next i {
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.55rem;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+.gallery-carousel .owl-nav .owl-prev i:hover, 
+.gallery-carousel .owl-nav .owl-next i:hover {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.4s ease;
+}
+
+.gallery-carousel img {
+  cursor: pointer;
+}
+
+.modal-body img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+}
+
+.modal {
+  --bs-modal-width: 968px;
+}

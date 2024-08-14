@@ -1,0 +1,68 @@
+.owl-carousel .item-video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.owl-nav .owl-prev, .owl-nav .owl-next {
+  width: 4.8rem;
+  height: 4.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  transition: all .5s ease-in-out;
+}
+
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev {
+  border-radius: 50%;
+}
+
+.owl-nav .owl-prev {
+  left: 10px;
+}
+
+.owl-nav .owl-next {
+  right: 10px;
+}
+
+.owl-nav .owl-prev i, .owl-nav .owl-next i {
+  font-size: 2.4rem;
+  color: white;
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+  background: rgba(13, 17, 23, 0.1);
+  transition: all .5s ease-in-out;
+}
+
+.owl-theme .owl-nav [class*=owl-].disabled {
+  background: transparent;
+}
+
+@media screen and (max-width: 767px) {
+  .owl-item .img-small-devices {
+    display: block !important;
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .owl-item:nth-child(1) .img-small-devices {
+    background-image: url('../../assets/img/um-pequeno-passo-mobile.gif');
+  }
+  
+  .owl-item:nth-child(2) .img-small-devices {
+    background-image: url('../../assets/img/os-camundangos-mobile.gif');
+  }
+  
+  .owl-item:nth-child(3) .img-small-devices {
+    background-image: url('../../assets/img/ike-mobile.gif');
+  }
+}
