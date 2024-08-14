@@ -485,7 +485,7 @@ iframe#game_drop,
   }
 
   .wrapper-info {
-    bottom: 25%;
+    bottom: 35%;
     right: 50%;
     transform: translate(50%, 50%);
   }
@@ -498,7 +498,7 @@ iframe#game_drop,
   .desc-small-devices {
     display: block !important;
     position: absolute;
-    bottom: 0rem;
+    bottom: 8rem;
     padding: 2rem 4rem;
     text-align: center;
     font-weight: 600;
