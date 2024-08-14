@@ -55,14 +55,14 @@
   }
   
   .owl-item:nth-child(1) .img-small-devices {
-    background-image: url('../../assets/img/um-pequeno-passo-mobile.gif');
+    background-image: url('../../../../assets/img/um-pequeno-passo-mobile.gif');
   }
   
   .owl-item:nth-child(2) .img-small-devices {
-    background-image: url('../../assets/img/os-camundangos-mobile.gif');
+    background-image: url('../../../../assets/img/os-camundangos-mobile.gif');
   }
   
   .owl-item:nth-child(3) .img-small-devices {
-    background-image: url('../../assets/img/ike-mobile.gif');
+    background-image: url('../../../../assets/img/ike-mobile.gif');
   }
 }
