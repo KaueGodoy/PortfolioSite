@@ -54,7 +54,7 @@ export function initInfoButton() {
     let gameId = $(this).data('section');
 
     if ($(window).width() <= 767 && gameId === 'gameplay-camundangos' && $(this).hasClass('playBtn')) {
-      window.open('https://html-classic.itch.zone/html/11141862/index.html', '_blank');
+      window.location.href = 'https://html-classic.itch.zone/html/11141862/index.html';
       return;
     }
     
