@@ -52,6 +52,11 @@ export function initInfoButton() {
     }
 
     let gameId = $(this).data('section');
+
+    if ($(window).width() <= 767 && gameId === 'gameplay-camundangos' && $(this).hasClass('playBtn')) {
+      window.location.href = 'https://html-classic.itch.zone/html/11141862/index.html';
+      return;
+    }
     
     $('.gameplay-section').removeClass('active-section').fadeOut(500);
     $('.info-section').removeClass('active-section').fadeOut(500);
